@@ -1,4 +1,4 @@
-with open('text file.txt','r') as file:
+with open('input_day_10.txt','r') as file:
     content=file.read().split('\n')
 # print(content)
 x=1
