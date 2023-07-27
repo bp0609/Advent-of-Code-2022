@@ -1,7 +1,7 @@
 with open("input_day_11.txt","r") as file:
     content=file.read()
 lst=content.split("\n\n")
-# print(lst[7],"DONE")
+
 items=[]
 operations=[]
 operation_nums=[]
@@ -9,11 +9,11 @@ tests=[]
 t_case=[]
 f_case=[]
 iterations=[0]*len(lst)
+
 def addition(old , num):
     return old+num
 def multiply(old,num):
     return old*num
-
 def square(old):
     return old*old
 
@@ -23,10 +23,10 @@ for i in lst:
     t_monkey=int(lst1[4].split("monkey ")[1])
     f_monkey=int(lst1[5].split("monkey ")[1])
     item=list(map(int,lst1[1].split(": ")[1].split(",")))    # it is a list
+    
     if lst1[2].split("old ")[1].split(" ")[1]=="old":
         operation_num=0
         operation="sq"
-    
     else:    
         operation_num=int(lst1[2].split("old ")[1].split(" ")[1])
         operation=lst1[2].split("old ")[1].split(" ")[0]
@@ -38,15 +38,8 @@ for i in lst:
     tests.append(divisible_num)
     t_case.append(t_monkey)
     f_case.append(f_monkey)
-
-
-# print(items)
-# print(operation_nums)
-# print(operations)
-# print(tests)
-# print(t_case)
-# print(f_case)
-for i in range(10000):
+# ------------Data Stored--------------------------------------->>>>
+for i in range(20):
     for j in range(len(lst)):
         iterations[j]=len(items[j])+iterations[j]
         for item in range(len(items[j])):
